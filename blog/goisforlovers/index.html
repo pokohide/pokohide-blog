@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html>
     <head>
         
@@ -19,7 +18,7 @@
         
         
             
-                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+                <meta name="description" content="ぽこひでのブログです。">
             
         
 
@@ -32,14 +31,14 @@
 <meta name="twitter:title" content="(Hu)go Template Primer"/>
 <meta name="twitter:description" content="Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates."/>
-<meta name="twitter:site" content="@julio_pescador"/>
+<meta name="twitter:site" content="@hyde141421356"/>
 
 
         <meta property="og:title" content="(Hu)go Template Primer" />
 <meta property="og:description" content="Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://hugo.spf13.com/blog/goisforlovers/" />
+<meta property="og:url" content="http://www.pokohide.me/blog/goisforlovers/" />
 
 
 <meta property="og:updated_time" content="2014-04-02T00:00:00&#43;00:00"/>
@@ -68,29 +67,45 @@ This document is a brief primer on using go templates.">
 
         
 
+
         
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+      <link rel="stylesheet" href="/css/main.min.css" />
+    
+  
+
 
         
         
-            
-        
 
-        
-        
 
-        
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
-        
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        
-        
-        
-            
-        
+ga('create', 'UA-86584013-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
     </head>
     <body>
 
@@ -101,7 +116,7 @@ This document is a brief primer on using go templates.">
     
 <header id="header">
     
-        <h2><a href="/">Future Imperfect</i></a></h2>
+        <h2><a href="/">ぽこひでブログ</i></a></h2>
     
 
     <nav class="links">
@@ -139,7 +154,7 @@ This document is a brief primer on using go templates.">
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="q" value="site:http://hugo.spf13.com/">
+                    <input type="hidden" name="q" value="site:http://www.pokohide.me">
                 </form>
             </li>
             <li class="menu">
@@ -156,7 +171,7 @@ This document is a brief primer on using go templates.">
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="q" value="site:http://hugo.spf13.com/">
+                <input type="hidden" name="q" value="site:http://www.pokohide.me">
             </form>
         </section>
 
@@ -208,11 +223,11 @@ This document is a brief primer on using go templates.">
 
                 
                     <li>
-                        <a href="http://hugo.spf13.com/blog/creating-a-new-theme/"><p>Creating a New Theme</p></a>
+                        <a href="http://www.pokohide.me/blog/creating-a-new-theme/"><p>Creating a New Theme</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://hugo.spf13.com/blog/goisforlovers/"><p>(Hu)go Template Primer</p></a>
+                        <a href="http://www.pokohide.me/blog/goisforlovers/"><p>(Hu)go Template Primer</p></a>
                     </li>
                 
             </ul>
@@ -231,43 +246,43 @@ This document is a brief primer on using go templates.">
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&text=%28Hu%29go%20Template%20Primer&via=julio_pescador" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&text=%28Hu%29go%20Template%20Primer&via=hyde141421356" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Unknown%20Author&body=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Unknown%20Author&body=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -284,7 +299,7 @@ This document is a brief primer on using go templates.">
     <header>
     <div class="title">
         
-            <h1><a href="http://hugo.spf13.com/blog/goisforlovers/">(Hu)go Template Primer</a></h1>
+            <h1><a href="http://www.pokohide.me/blog/goisforlovers/">(Hu)go Template Primer</a></h1>
             
         
         
@@ -311,43 +326,43 @@ This document is a brief primer on using go templates.">
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&text=%28Hu%29go%20Template%20Primer&via=julio_pescador" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&text=%28Hu%29go%20Template%20Primer&via=hyde141421356" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f&title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Unknown%20Author&body=http%3a%2f%2fhugo.spf13.com%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Unknown%20Author&body=http%3a%2f%2fwww.pokohide.me%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -372,7 +387,7 @@ This document is a brief primer on using go templates.">
 
         
 
-        <a href="http://hugo.spf13.com/blog/goisforlovers/" class="image featured">
+        <a href="http://www.pokohide.me/blog/goisforlovers/" class="image featured">
             <img src="/img/2014/04/pic02.jpg" alt="" />
         </a>
     
@@ -757,12 +772,12 @@ so, such as in this example:</p>
 </article>
 <ul class="actions pagination">
     
-        <li><a href="http://hugo.spf13.com/blog/hugoisforlovers/"
+        <li><a href="http://www.pokohide.me/blog/hugoisforlovers/"
                 class="button big previous">Getting Started with Hugo</a></li>
     
 
     
-        <li><a href="http://hugo.spf13.com/blog/creating-a-new-theme/"
+        <li><a href="http://www.pokohide.me/blog/creating-a-new-theme/"
                 class="button big next">Creating a New Theme</a></li>
     
 </ul>
@@ -774,9 +789,9 @@ so, such as in this example:</p>
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
-    var disqus_identifier = 'http:\/\/hugo.spf13.com\/blog\/goisforlovers\/';
+    var disqus_identifier = 'http:\/\/www.pokohide.me\/blog\/goisforlovers\/';
     var disqus_title = '(Hu)go Template Primer';
-    var disqus_url = 'http:\/\/hugo.spf13.com\/blog\/goisforlovers\/';
+    var disqus_url = 'http:\/\/www.pokohide.me\/blog\/goisforlovers\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -799,12 +814,12 @@ so, such as in this example:</p>
             
             
                 
-                    <a href="/" class="logo"><img src="/img/main/logo.jpg" alt="Hugo Future Imperfect" /></a>
+                    <a href="/" class="logo"><img src="/images/logo.jpg" alt="ぽこひで" /></a>
                 
             
             
                 <header>
-                    <h2>Hugo Future Imperfect</h2>
+                    <h2>ぽこひでブログ</h2>
                     <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i></p>
                 </header>
             
@@ -812,7 +827,7 @@ so, such as in this example:</p>
                 
                 
                     
-<li><a href="//github.com/jpescador" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+<li><a href="//github.com/hyde2able" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
 
 
@@ -862,9 +877,11 @@ so, such as in this example:</p>
 
 
 
-<li><a href="//twitter.com/julio_pescador" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+<li><a href="//twitter.com/hyde141421356" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
 
 
+
+<li><a href="mailto:hyde14142@gmail.com" title="Email" class="fa fa-envelope"></a></li>
 
 
                 
@@ -889,7 +906,7 @@ so, such as in this example:</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://hugo.spf13.com/blog/creating-a-new-theme/">Creating a New Theme</a></h3>
+                                <h3><a href="http://www.pokohide.me/blog/creating-a-new-theme/">Creating a New Theme</a></h3>
                                 
                                     
                                 
@@ -903,7 +920,7 @@ so, such as in this example:</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://hugo.spf13.com/blog/goisforlovers/">(Hu)go Template Primer</a></h3>
+                                <h3><a href="http://www.pokohide.me/blog/goisforlovers/">(Hu)go Template Primer</a></h3>
                                 
                                     
                                 
@@ -993,7 +1010,7 @@ so, such as in this example:</p>
                 
                 
                     
-<li><a href="//github.com/jpescador" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+<li><a href="//github.com/hyde2able" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
 
 
@@ -1043,15 +1060,17 @@ so, such as in this example:</p>
 
 
 
-<li><a href="//twitter.com/julio_pescador" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+<li><a href="//twitter.com/hyde141421356" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
 
 
+
+<li><a href="mailto:hyde14142@gmail.com" title="Email" class="fa fa-envelope"></a></li>
 
 
                 
             </ul>
 
-            <p class="copyright">&copy; Hugo Future Imperfect. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+            <p class="copyright">&copy; ぽこひでブログ. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
         </section>
 
 </section>
