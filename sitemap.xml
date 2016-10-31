@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://hugo.spf13.com/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugo.spf13.com/blog/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugo.spf13.com/about/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugo.spf13.com/blog/goisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugo.spf13.com/blog/hugoisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugo.spf13.com/blog/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>
