@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+
+<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
+
+{{ if isset .Site.Params "minifiedFilesCSS" }}
+  {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
+{{ else if isset .Site.Params "customCSS" }}
+  {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
+{{ else }}
+  {{ $.Scratch.Set "cssFiles" false }}
+{{ end }}
+
+{{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
+  <link rel="stylesheet" href="/css/google-font.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/add-on.css" />
+  <link rel="stylesheet" href="/css/monokai-sublime.css">
+{{ end }}
+
+{{ if ne ($.Scratch.Get "cssFiles") false }}
+  {{ range $.Scratch.Get "cssFiles" }}
+    {{ if ne . "default" }}
+      <link rel="stylesheet" href="{{ . }}" />
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,16 +1,16 @@
-baseurl = "http://hugo.spf13.com/"
-languageCode = "en-us"
-title = "Hugo Future Imperfect"
+baseurl = "http://www.pokohide.me"
+languageCode = "ja"
+title = "ぽこひでブログ"
 preserveTaxonomyNames = true
 paginate = 3
 disqusShortname = "shortname"
-googleAnalytics = ""
+googleAnalytics = "UA-86584013-1"
 
 [params]
     # Sets the meta tag description, usually reserved for the main page
-    description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
+    description          = "ぽこひでのブログです。"
     # This will appear on the top left of the navigation bar
-    navbarTitle          = "Future Imperfect"
+    navbarTitle          = "ぽこひでブログ"
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = true
@@ -40,7 +40,7 @@ googleAnalytics = ""
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
 [params.intro]
-    header    = "Hugo Future Imperfect"
+    header    = "ぽこひでブログ"
 
     paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
 
@@ -50,13 +50,11 @@ googleAnalytics = ""
 # A width of less than 100px is recommended
 # This is optional
 [params.intro.pic]
-    src       = "/img/main/logo.jpg"
-    # modify your picture in the shape of a circle or
-    # future imperfect's hexagonal shape
-    circle    = false
-    imperfect = true
-    width     = ""
-    alt       = "Hugo Future Imperfect"
+  src = "/images/logo.jpg"
+  circle = false
+  imperfect = true
+  width  = ""
+  alt = "ぽこひで"
 
 # Adjust the amount of recent posts on the sidebar.
 # This is optional. The default value 5 will be used
@@ -85,31 +83,31 @@ googleAnalytics = ""
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
 # The social media icons will appear on the sidebar
 [social]
-    github          = "jpescador"
-    bitbucket       = ""
-    jsfiddle        = ""
-    codepen         = ""
-    foursquare      = ""
-    dribbble        = ""
-    deviantart      = ""
-    behance         = ""
-    flickr          = ""
-    instagram       = ""
-    youtube         = ""
-    vimeo           = ""
-    vine            = ""
-    medium          = ""
-    wordpress       = ""
-    tumblr          = ""
-    xing            = ""
-    linkedin        = ""
-    slideshare      = ""
-    stackoverflow   = ""
-    reddit          = ""
-    pinterest       = ""
-    googleplus      = ""
+    github          = "hyde2able"
+    #bitbucket       = ""
+    #jsfiddle        = ""
+    #codepen         = ""
+    #foursquare      = ""
+    #dribbble        = ""
+    #deviantart      = ""
+    #behance         = ""
+    #flickr          = ""
+    #instagram       = ""
+    #youtube         = ""
+    #vimeo           = ""
+    #vine            = ""
+    #medium          = ""
+    #wordpress       = ""
+    #tumblr          = ""
+    #xing            = ""
+    #linkedin        = ""
+    #slideshare      = ""
+    #stackoverflow   = ""
+    #reddit          = ""
+    #pinterest       = ""
+    #googleplus      = ""
     facebook        = ""
-    facebook_admin  = ""
-    twitter_domain  = ""
-    twitter         = "julio_pescador"
-    email           = ""
+    #facebook_admin  = ""
+    #twitter_domain  = ""
+    twitter         = "hyde141421356"
+    email           = "hyde14142@gmail.com"
