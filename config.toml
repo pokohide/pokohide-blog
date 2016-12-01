@@ -3,7 +3,6 @@ languageCode = "ja"
 title = "ぽこひでブログ"
 preserveTaxonomyNames = true
 paginate = 3
-disqusShortname = "shortname"
 googleAnalytics = "UA-86584013-1"
 
 [params]
@@ -42,9 +41,9 @@ googleAnalytics = "UA-86584013-1"
 [params.intro]
     header    = "ぽこひでブログ"
 
-    paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
+    paragraph = "普段はRailsやらNodeやらReactやらをスタバや大学で書いてるパソコンかたかた系男子です<i class='fa fa-laptop'></i><br />普通に日記書いたり、映画を素人ながら語ったりのほのぼのブログです。<i class='fa fa-hand-peace-o'></i>"
 
-    about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
+    about = "おすろてつくをやってたりします。検索に引っかからないようにあえて平仮名表記で<i class='fa fa-hand-paper-o'></i><br />普段は映画とか洋ドラマみたり、ゲーム実況みたりしながらコード書いてマッス。よろしく🙇しやす"
 
 # This will also appear on the sidebar.
 # A width of less than 100px is recommended
@@ -64,18 +63,18 @@ googleAnalytics = "UA-86584013-1"
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
 [[menu.main]]
-    name = "Blog"
+    name = "ブログ"
     url = "/blog"
     identifier = "fa fa-newspaper-o"
     weight = 1
 
 [[menu.main]]
-    name = "Categories"
+    name = "カテゴリー"
     url = "/categories"
     weight = 2
 
 [[menu.main]]
-    name = "About"
+    name = "ぽこひで?"
     url = "/about"
     weight = 3
 
@@ -106,7 +105,7 @@ googleAnalytics = "UA-86584013-1"
     #reddit          = ""
     #pinterest       = ""
     #googleplus      = ""
-    facebook        = ""
+    #facebook        = ""
     #facebook_admin  = ""
     #twitter_domain  = ""
     twitter         = "hyde141421356"
