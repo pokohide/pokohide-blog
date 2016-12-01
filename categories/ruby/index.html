@@ -12,7 +12,7 @@
 <html>
     <head>
         
-            <title>Categories - ぽこひでブログ</title>
+            <title>Ruby Posts - ぽこひでブログ</title>
         
 
         <meta charset="utf-8" />
@@ -29,13 +29,13 @@
         
 
         
-        <meta property="og:title" content="Categories" />
+        <meta property="og:title" content="Ruby" />
 <meta property="og:description" content="ぽこひでのブログです。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://www.pokohide.me/categories/" />
+<meta property="og:url" content="http://www.pokohide.me/categories/ruby/" />
 
 
-
+<meta property="og:updated_time" content="2015-04-27T00:00:00&#43;00:00"/>
 
 
 
@@ -46,7 +46,7 @@
 
 
         
-<meta itemprop="name" content="Categories">
+<meta itemprop="name" content="Ruby">
 <meta itemprop="description" content="ぽこひでのブログです。">
 
 
@@ -219,56 +219,117 @@ ga('send', 'pageview');
 
     
     <div id="main">
+        <h1>Ruby</h1>
+        
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://www.pokohide.me/blog/n-gram/">人工無能で会話してみた n-gram編(1)</a></h2>
+        
+        
+    </div>
+    <div class="meta">
         
             
         
 
-        <ul class="posts">
-            <header>
-                <h1>categories</h1>
-            </header>
-            
-            
-                <li>
-                    <article>
-                        <header>
-                            <a href="/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">プログラミング</a>
-                            <span style="float:right;">2</span>
-                        </header>
-                    </article>
-                </li>
-            
-                <li>
-                    <article>
-                        <header>
-                            <a href="/categories/ruby">Ruby</a>
-                            <span style="float:right;">1</span>
-                        </header>
-                    </article>
-                </li>
-            
-                <li>
-                    <article>
-                        <header>
-                            <a href="/categories/ruby-on-rails">Ruby on Rails</a>
-                            <span style="float:right;">1</span>
-                        </header>
-                    </article>
-                </li>
-            
-                <li>
-                    <article>
-                        <header>
-                            <a href="/categories/%E6%B4%8B%E6%A5%BD">洋楽</a>
-                            <span style="float:right;">1</span>
-                        </header>
-                    </article>
-                </li>
-            
-        </ul>
+        <time class="published"
+            datetime='2015-04-27'>
+            April 27, 2015</time>
+        <span class="author">ぽこひで</span>
+        
+            <p>1 minute read</p>
+        
+        
     </div>
+</header>
 
     
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://www.pokohide.me/blog/n-gram/" class="image featured">
+            <img src="/img/2015/04/ngram.png" alt="無駄にかっこいいN-gram" />
+        </a>
+    
+
+
+    <p>はじめまして。大学の前期授業も始まって今年から人工知能の講義があったので、試しに図書館にあったこの「はじめてのAIプログラミング」を読んでみました！
+実装はC言語なんですが、年明けからRubyを勉強し始めてからC言語の冗長性になんか嫌気がさしてしまったので、自分なりに拙いプログラムながらRubyで実装してみました。
+読んでみると「はじめて」とうたってるだけあって、最初の方はかなりわかりやすくて読んでいて楽しかったです。その内容を少しずつ紹介できたらなと思います。
+基本的にこの本の７割近くは人工無能の話で、人間と対話するにあたってどのような技術が使われてきたかをCのソース付きで解説してくれています。その中でも、最初に紹介されていたn-gram法とマルコフ連鎖を今日は自分のメモがてらここに。
+簡単な人工無能で会話するために、まず学習させる文章を用意します。夏目漱石とか古い感じの書籍だと著作権が切れてて無料でインターネットに載ってたりするので今回はそれを活用する。
+まず、その文章をn-gram法といって、n文字ずつのまとまりに区切ってその表れ方を解析する方法で、文章の特徴を知ります。例えば2-gram法で
+　「明日は晴れだ。」-&gt; [明日],[日は],[は晴],[晴れ],[れだ],[だ。]
+と区切れます。この方法で区切ったこの2文字列を何か配列に格納して、2文字列が文章内に何回出現したかを記録していきます。これをつたないプログラムで書くと
+@list = {} def ngram(n, text) i = 0 while(text[i+n-1]) do @list[text[i,n]]? (@list[text[i,n] += 1) : (@list[text[i,n]] = 1) i += 1 end end  となります。何らかの文章(text)と何文字ごとに分解するか(n)を引数で渡して、例えば3文字なら、3文字先の文字が存在しなくなるまで、while文で繰り返して、もし既にその3文字列が存在すれば+1を、まだ存在しなかったら1回出現したので1を格納する。といった動作をします。
+実際に実行してみると
+ngram(2,&quot;私は日本人です。私は中国人です。あなたは何人ですか？&quot;) #=&gt; {&quot;私は&quot;=&gt;2, &quot;は日&quot;=&gt;1, &quot;日本&quot;=&gt;1, &quot;本人&quot;=&gt;1, &quot;人で&quot;=&gt;3, &quot;です&quot;=&gt;3, &quot;す。&quot;=&gt;2, &quot;。私&quot;=&gt;1, &quot;は中&quot;=&gt;1, &quot;中国&quot;=&gt;1, &quot;国人&quot;=&gt;1, &quot;。あ&quot;=&gt;1, &quot;あな&quot;=&gt;1, &quot;なた&quot;=&gt;1, &quot;たは&quot;=&gt;1, &quot;は何&quot;=&gt;1, &quot;何人&quot;=&gt;1, &quot;すか&quot;=&gt;1, &quot;か？&quot;=&gt;1}  と@listに格納されるので、とりあずこれでn-gram法は完成ということで。 次回はこのn-gram法で作ったn文字列をマルコフ連鎖で繋げてそれっぽい？会話をできる人工無能を頑張って作りますっb</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://www.pokohide.me/blog/n-gram/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/ruby'>Ruby</a></li>
+    
+        <li><a href='/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0'>プログラミング</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+
+        
+<ul class="actions pagination">
+    
+        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+    
+
+    
+        <li><a href="#" class="disabled button big next">Next Page</a></li>
+    
+</ul>
+
+    </div>
     
 <section id="sidebar">
 
@@ -288,7 +349,7 @@ ga('send', 'pageview');
             
             <ul class="icons">
                 
-                    <li><a href="http://www.pokohide.me/categories/index.xml" type="application/rss+xml"
+                    <li><a href="http://www.pokohide.me/categories/ruby/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -415,6 +476,57 @@ ga('send', 'pageview');
     
     
     
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">プログラミング</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ruby/">Ruby</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ruby-on-rails/">Ruby on Rails</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/%E6%B4%8B%E6%A5%BD/">洋楽</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
 
     
         
@@ -432,7 +544,7 @@ ga('send', 'pageview');
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="http://www.pokohide.me/categories/index.xml" type="application/rss+xml"
+                    <li><a href="http://www.pokohide.me/categories/ruby/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

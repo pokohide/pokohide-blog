@@ -1,0 +1,809 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        
+            
+                <title>人工無能で会話してみた n-gram編(1)</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.17" />
+        
+
+
+        
+            <meta name="author" content="ぽこひで">
+        
+        
+            
+                <meta name="description" content="ぽこひでのブログです。">
+            
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="人工無能で会話してみた n-gram編(1)"/>
+<meta name="twitter:description" content="はじめまして。大学の前期授業も始まって今年から人工知能の講義があったので、試しに図書館にあったこの「はじめてのAIプログラミング」を読んでみました！
+実装はC言語なんですが、年明けからRubyを勉強し始めてからC言語の冗長性になんか嫌気がさしてしまったので、自分なりに拙いプログラムながらRubyで実装してみました。
+読んでみると「はじめて」とうたってるだけあって、最初の方はかなりわかりやすくて読んでいて楽しかったです。その内容を少しずつ紹介できたらなと思います。
+基本的にこの本の７割近くは人工無能の話で、人間と対話するにあたってどのような技術が使われてきたかをCのソース付きで解説してくれています。その中でも、最初に紹介されていたn-gram法とマルコフ連鎖を今日は自分のメモがてらここに。
+簡単な人工無能で会話するために、まず学習させる文章を用意します。夏目漱石とか古い感じの書籍だと著作権が切れてて無料でインターネットに載ってたりするので今回はそれを活用する。
+まず、その文章をn-gram法といって、n文字ずつのまとまりに区切ってその表れ方を解析する方法で、文章の特徴を知ります。例えば2-gram法で
+　「明日は晴れだ。」-&gt; [明日],[日は],[は晴],[晴れ],[れだ],[だ。]
+と区切れます。この方法で区切ったこの2文字列を何か配列に格納して、2文字列が文章内に何回出現したかを記録していきます。これをつたないプログラムで書くと
+@list = {} def ngram(n, text) i = 0 while(text[i&#43;n-1]) do @list[text[i,n]]? (@list[text[i,n] &#43;= 1) : (@list[text[i,n]] = 1) i &#43;= 1 end end  となります。何らかの文章(text)と何文字ごとに分解するか(n)を引数で渡して、例えば3文字なら、3文字先の文字が存在しなくなるまで、while文で繰り返して、もし既にその3文字列が存在すれば&#43;1を、まだ存在しなかったら1回出現したので1を格納する。といった動作をします。
+実際に実行してみると
+ngram(2,&quot;私は日本人です。私は中国人です。あなたは何人ですか？&quot;) #=&gt; {&quot;私は&quot;=&gt;2, &quot;は日&quot;=&gt;1, &quot;日本&quot;=&gt;1, &quot;本人&quot;=&gt;1, &quot;人で&quot;=&gt;3, &quot;です&quot;=&gt;3, &quot;す。&quot;=&gt;2, &quot;。私&quot;=&gt;1, &quot;は中&quot;=&gt;1, &quot;中国&quot;=&gt;1, &quot;国人&quot;=&gt;1, &quot;。あ&quot;=&gt;1, &quot;あな&quot;=&gt;1, &quot;なた&quot;=&gt;1, &quot;たは&quot;=&gt;1, &quot;は何&quot;=&gt;1, &quot;何人&quot;=&gt;1, &quot;すか&quot;=&gt;1, &quot;か？&quot;=&gt;1}  と@listに格納されるので、とりあずこれでn-gram法は完成ということで。 次回はこのn-gram法で作ったn文字列をマルコフ連鎖で繋げてそれっぽい？会話をできる人工無能を頑張って作りますっb"/>
+<meta name="twitter:site" content="@hyde141421356"/>
+
+
+        <meta property="og:title" content="人工無能で会話してみた n-gram編(1)" />
+<meta property="og:description" content="はじめまして。大学の前期授業も始まって今年から人工知能の講義があったので、試しに図書館にあったこの「はじめてのAIプログラミング」を読んでみました！
+実装はC言語なんですが、年明けからRubyを勉強し始めてからC言語の冗長性になんか嫌気がさしてしまったので、自分なりに拙いプログラムながらRubyで実装してみました。
+読んでみると「はじめて」とうたってるだけあって、最初の方はかなりわかりやすくて読んでいて楽しかったです。その内容を少しずつ紹介できたらなと思います。
+基本的にこの本の７割近くは人工無能の話で、人間と対話するにあたってどのような技術が使われてきたかをCのソース付きで解説してくれています。その中でも、最初に紹介されていたn-gram法とマルコフ連鎖を今日は自分のメモがてらここに。
+簡単な人工無能で会話するために、まず学習させる文章を用意します。夏目漱石とか古い感じの書籍だと著作権が切れてて無料でインターネットに載ってたりするので今回はそれを活用する。
+まず、その文章をn-gram法といって、n文字ずつのまとまりに区切ってその表れ方を解析する方法で、文章の特徴を知ります。例えば2-gram法で
+　「明日は晴れだ。」-&gt; [明日],[日は],[は晴],[晴れ],[れだ],[だ。]
+と区切れます。この方法で区切ったこの2文字列を何か配列に格納して、2文字列が文章内に何回出現したかを記録していきます。これをつたないプログラムで書くと
+@list = {} def ngram(n, text) i = 0 while(text[i&#43;n-1]) do @list[text[i,n]]? (@list[text[i,n] &#43;= 1) : (@list[text[i,n]] = 1) i &#43;= 1 end end  となります。何らかの文章(text)と何文字ごとに分解するか(n)を引数で渡して、例えば3文字なら、3文字先の文字が存在しなくなるまで、while文で繰り返して、もし既にその3文字列が存在すれば&#43;1を、まだ存在しなかったら1回出現したので1を格納する。といった動作をします。
+実際に実行してみると
+ngram(2,&quot;私は日本人です。私は中国人です。あなたは何人ですか？&quot;) #=&gt; {&quot;私は&quot;=&gt;2, &quot;は日&quot;=&gt;1, &quot;日本&quot;=&gt;1, &quot;本人&quot;=&gt;1, &quot;人で&quot;=&gt;3, &quot;です&quot;=&gt;3, &quot;す。&quot;=&gt;2, &quot;。私&quot;=&gt;1, &quot;は中&quot;=&gt;1, &quot;中国&quot;=&gt;1, &quot;国人&quot;=&gt;1, &quot;。あ&quot;=&gt;1, &quot;あな&quot;=&gt;1, &quot;なた&quot;=&gt;1, &quot;たは&quot;=&gt;1, &quot;は何&quot;=&gt;1, &quot;何人&quot;=&gt;1, &quot;すか&quot;=&gt;1, &quot;か？&quot;=&gt;1}  と@listに格納されるので、とりあずこれでn-gram法は完成ということで。 次回はこのn-gram法で作ったn文字列をマルコフ連鎖で繋げてそれっぽい？会話をできる人工無能を頑張って作りますっb" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.pokohide.me/blog/n-gram/" />
+
+
+<meta property="og:updated_time" content="2015-04-27T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="人工無能で会話してみた n-gram編(1)">
+<meta itemprop="description" content="はじめまして。大学の前期授業も始まって今年から人工知能の講義があったので、試しに図書館にあったこの「はじめてのAIプログラミング」を読んでみました！
+実装はC言語なんですが、年明けからRubyを勉強し始めてからC言語の冗長性になんか嫌気がさしてしまったので、自分なりに拙いプログラムながらRubyで実装してみました。
+読んでみると「はじめて」とうたってるだけあって、最初の方はかなりわかりやすくて読んでいて楽しかったです。その内容を少しずつ紹介できたらなと思います。
+基本的にこの本の７割近くは人工無能の話で、人間と対話するにあたってどのような技術が使われてきたかをCのソース付きで解説してくれています。その中でも、最初に紹介されていたn-gram法とマルコフ連鎖を今日は自分のメモがてらここに。
+簡単な人工無能で会話するために、まず学習させる文章を用意します。夏目漱石とか古い感じの書籍だと著作権が切れてて無料でインターネットに載ってたりするので今回はそれを活用する。
+まず、その文章をn-gram法といって、n文字ずつのまとまりに区切ってその表れ方を解析する方法で、文章の特徴を知ります。例えば2-gram法で
+　「明日は晴れだ。」-&gt; [明日],[日は],[は晴],[晴れ],[れだ],[だ。]
+と区切れます。この方法で区切ったこの2文字列を何か配列に格納して、2文字列が文章内に何回出現したかを記録していきます。これをつたないプログラムで書くと
+@list = {} def ngram(n, text) i = 0 while(text[i&#43;n-1]) do @list[text[i,n]]? (@list[text[i,n] &#43;= 1) : (@list[text[i,n]] = 1) i &#43;= 1 end end  となります。何らかの文章(text)と何文字ごとに分解するか(n)を引数で渡して、例えば3文字なら、3文字先の文字が存在しなくなるまで、while文で繰り返して、もし既にその3文字列が存在すれば&#43;1を、まだ存在しなかったら1回出現したので1を格納する。といった動作をします。
+実際に実行してみると
+ngram(2,&quot;私は日本人です。私は中国人です。あなたは何人ですか？&quot;) #=&gt; {&quot;私は&quot;=&gt;2, &quot;は日&quot;=&gt;1, &quot;日本&quot;=&gt;1, &quot;本人&quot;=&gt;1, &quot;人で&quot;=&gt;3, &quot;です&quot;=&gt;3, &quot;す。&quot;=&gt;2, &quot;。私&quot;=&gt;1, &quot;は中&quot;=&gt;1, &quot;中国&quot;=&gt;1, &quot;国人&quot;=&gt;1, &quot;。あ&quot;=&gt;1, &quot;あな&quot;=&gt;1, &quot;なた&quot;=&gt;1, &quot;たは&quot;=&gt;1, &quot;は何&quot;=&gt;1, &quot;何人&quot;=&gt;1, &quot;すか&quot;=&gt;1, &quot;か？&quot;=&gt;1}  と@listに格納されるので、とりあずこれでn-gram法は完成ということで。 次回はこのn-gram法で作ったn文字列をマルコフ連鎖で繋げてそれっぽい？会話をできる人工無能を頑張って作りますっb">
+
+
+<meta itemprop="dateModified" content="2015-04-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="58">
+
+
+
+<meta itemprop="keywords" content="Ruby,Ruby on Rails,プログラミング,洋楽," />
+
+        
+
+
+        
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+      <link rel="stylesheet" href="/css/main.min.css" />
+    
+  
+
+
+        
+        
+
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86584013-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">ぽこひでブログ</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>ブログ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories">
+                        カテゴリー
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about">
+                        ぽこひで?
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://www.pokohide.me">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://www.pokohide.me">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                ブログ
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            <h3>
+                                
+                                カテゴリー
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            <h3>
+                                
+                                ぽこひで?
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://www.pokohide.me/blog/tsuimana/"><p>PV見ながら洋楽歌えちゃうし、しかもシェアできるウェブサービス『ついまな』をリリースしました！</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.pokohide.me/blog/n-gram/"><p>人工無能で会話してみた n-gram編(1)</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&text=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29&via=hyde141421356" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&title=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&title=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&title=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by %e3%81%bd%e3%81%93%e3%81%b2%e3%81%a7&body=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://www.pokohide.me/blog/n-gram/">人工無能で会話してみた n-gram編(1)</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2015-04-27'>
+            April 27, 2015</time>
+        <span class="author">ぽこひで</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&text=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29&via=hyde141421356" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&title=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&title=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f&title=%e4%ba%ba%e5%b7%a5%e7%84%a1%e8%83%bd%e3%81%a7%e4%bc%9a%e8%a9%b1%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20n-gram%e7%b7%a8%281%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by %e3%81%bd%e3%81%93%e3%81%b2%e3%81%a7&body=http%3a%2f%2fwww.pokohide.me%2fblog%2fn-gram%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://www.pokohide.me/blog/n-gram/" class="image featured">
+            <img src="/img/2015/04/ngram.png" alt="無駄にかっこいいN-gram" />
+        </a>
+    
+
+
+    <div id="content">
+        <p>はじめまして。大学の前期授業も始まって今年から人工知能の講義があったので、試しに図書館にあったこの「はじめてのAIプログラミング」を読んでみました！</p>
+
+<p>実装はC言語なんですが、年明けからRubyを勉強し始めてからC言語の冗長性になんか嫌気がさしてしまったので、自分なりに拙いプログラムながらRubyで実装してみました。</p>
+
+<p>読んでみると「はじめて」とうたってるだけあって、最初の方はかなりわかりやすくて読んでいて楽しかったです。その内容を少しずつ紹介できたらなと思います。</p>
+
+<p>基本的にこの本の７割近くは人工無能の話で、人間と対話するにあたってどのような技術が使われてきたかをCのソース付きで解説してくれています。その中でも、最初に紹介されていたn-gram法とマルコフ連鎖を今日は自分のメモがてらここに。</p>
+
+<p>簡単な人工無能で会話するために、まず学習させる文章を用意します。夏目漱石とか古い感じの書籍だと著作権が切れてて無料でインターネットに載ってたりするので今回はそれを活用する。</p>
+
+<p>まず、その文章をn-gram法といって、n文字ずつのまとまりに区切ってその表れ方を解析する方法で、文章の特徴を知ります。例えば2-gram法で</p>
+
+<p>　　　　<code>「明日は晴れだ。」-&gt; [明日],[日は],[は晴],[晴れ],[れだ],[だ。]</code></p>
+
+<p>と区切れます。この方法で区切ったこの2文字列を何か配列に格納して、2文字列が文章内に何回出現したかを記録していきます。これをつたないプログラムで書くと</p>
+
+<pre><code>@list = {}
+def ngram(n, text)
+　i = 0
+　while(text[i+n-1]) do
+　　@list[text[i,n]]? (@list[text[i,n] += 1) : (@list[text[i,n]] = 1)
+　　i += 1
+　end
+end
+</code></pre>
+
+<p>となります。何らかの文章(text)と何文字ごとに分解するか(n)を引数で渡して、例えば3文字なら、3文字先の文字が存在しなくなるまで、while文で繰り返して、もし既にその3文字列が存在すれば+1を、まだ存在しなかったら1回出現したので1を格納する。といった動作をします。</p>
+
+<p>実際に実行してみると</p>
+
+<pre><code>ngram(2,&quot;私は日本人です。私は中国人です。あなたは何人ですか？&quot;)
+#=&gt; {&quot;私は&quot;=&gt;2, &quot;は日&quot;=&gt;1, &quot;日本&quot;=&gt;1, &quot;本人&quot;=&gt;1, &quot;人で&quot;=&gt;3, &quot;です&quot;=&gt;3, &quot;す。&quot;=&gt;2, &quot;。私&quot;=&gt;1, &quot;は中&quot;=&gt;1, &quot;中国&quot;=&gt;1, &quot;国人&quot;=&gt;1, &quot;。あ&quot;=&gt;1, &quot;あな&quot;=&gt;1, &quot;なた&quot;=&gt;1, &quot;たは&quot;=&gt;1, &quot;は何&quot;=&gt;1, &quot;何人&quot;=&gt;1, &quot;すか&quot;=&gt;1, &quot;か？&quot;=&gt;1}
+</code></pre>
+
+<p>と@listに格納されるので、とりあずこれでn-gram法は完成ということで。
+次回はこのn-gram法で作ったn文字列をマルコフ連鎖で繋げてそれっぽい？会話をできる人工無能を頑張って作りますっb</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/ruby'>Ruby</a></li>
+    
+        <li><a href='/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0'>プログラミング</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+
+    
+        <li><a href="http://www.pokohide.me/blog/tsuimana/"
+                class="button big next">PV見ながら洋楽歌えちゃうし、しかもシェアできるウェブサービス『ついまな』をリリースしました！</a></li>
+    
+</ul>
+
+
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" class="logo"><img src="/images/logo.jpg" alt="ぽこひで" /></a>
+                
+            
+            
+                <header>
+                    <h2>ぽこひでブログ</h2>
+                    <p>普段はRailsやらNodeやらReactやらをスタバや大学で書いてるパソコンかたかた系男子です<i class='fa fa-laptop'></i><br />普通に日記書いたり、映画を素人ながら語ったりのほのぼのブログです。<i class='fa fa-hand-peace-o'></i></p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/hyde2able" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/hyde141421356" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:hyde14142@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.pokohide.me/blog/tsuimana/">PV見ながら洋楽歌えちゃうし、しかもシェアできるウェブサービス『ついまな』をリリースしました！</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2016-06-03'>
+                                    June 3, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.pokohide.me/blog/n-gram/">人工無能で会話してみた n-gram編(1)</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2015-04-27'>
+                                    April 27, 2015</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">プログラミング</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ruby/">Ruby</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ruby-on-rails/">Ruby on Rails</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/%E6%B4%8B%E6%A5%BD/">洋楽</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>おすろてつくをやってたりします。検索に引っかからないようにあえて平仮名表記で&lt;i class=&#39;fa fa-hand-paper-o&#39;&gt;&lt;/i&gt;&lt;br /&gt;普段は映画とか洋ドラマみたり、ゲーム実況みたりしながらコード書いてマッス。よろしく🙇しやす</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/hyde2able" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/hyde141421356" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:hyde14142@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; ぽこひでブログ. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+

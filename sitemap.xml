@@ -3,32 +3,22 @@
   
   <url>
     <loc>http://www.pokohide.me/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.pokohide.me/blog/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2016-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.pokohide.me/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2016-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.pokohide.me/blog/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>http://www.pokohide.me/blog/tsuimana/</loc>
+    <lastmod>2016-06-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.pokohide.me/blog/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.pokohide.me/blog/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <loc>http://www.pokohide.me/blog/n-gram/</loc>
+    <lastmod>2015-04-27T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
