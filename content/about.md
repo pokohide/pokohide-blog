@@ -11,94 +11,40 @@ webアプリ開発してます。
 コーディングはあくまで手段で、何か面白そうなサービスを作りたい！って意欲の方が高いタイプです。
 個人でwebアプリ開発したり、今所属してるサークルでWEBサービスの開発・運用をしたりしています。
 
-## 過去に行ったインターン
-
-### 株式会社ディー・エヌ・エー
-- サーバーサイドとフロント
-- StuDEV 3daysのハッカソン。
-- サーバーサイドはNode.js, フロントはReact.js, PaaSはHeroku, BaaSでFirebaseを使って開発
-
-### 株式会社リクルートキャリア
-- エンジニア(長期インターン)
-- Railsを用いたフルスクラッチ開発
-
-### 株式会社サイバーエージェント
-- サーバーサイドとインフラ
-= アドテクコンペ
-
-### 株式会社サイバーエージェント
-- サーバーサイド(Node.js)
-- KyotoHack 6日間のハッカソン
-
-### LINE株式会社
-- サーバーサイド(Rails)
-- LINE BOT HACKATHON
-- 5日間でLINE BOTをつくろー
-
-### Wantedly
-- エンジニア(インターン)
-- 既存ページのAMP, InstantArticle対応
-
-### 株式会社Misoca
-- (インターン)
-- React+Reduxを用いたフロントエンド開発、またはその都度APIを書いたり、テストを書いたりしています。
-
-### 株式会社スローガン
-- 学生ハッカソン HackerWarrs
-- http://hackerwars.goodfind.jp/
-- 優秀賞、DeNA賞をいただきました。Railsでサーバー/フロントを担当していました。
-
-### 株式会社ギブリー
-- オンラインコンテスト
-- https://sprint.code-check.io/
-- ソフトウェアの実践問題開発のコンテストで第2位とNext賞, NTT賞を頂きました。
-
-### グリー株式会社
-- Unityエンジニア
-- ビジネス・デザイナーの３人でゲーム開発インターン。Unityでゲームのモックを作成。
-
-### ニフティ株式会社
-- フロントエンドエンジニア( インターン )
-- サービス企画開発。
-
-### レバレジーズ株式会社
-- バックエンドエンジニア( インターン )
-- Webサービス企画開発。Railsでバックエンド担当しました。
-
-### 株式会社エイチーム
-- バックエンドエンジニア( インターン )
-- Railsのバグフィクスと開発。個人賞いただきました。
-
-### Next Nagoya Hackthon
-- サーバーサイドエンジニア
-- PHPでサーバーサイド担当。DeNA賞いただきました。
-
-### ニフティ株式会社
-- ( インターン )
-- Webサービス企画。
-
-
 ## ポートフォリオ / 作品
 
-### OthloHack2016 (`2016-08`)
+### [OthloHack2016](http://hack.othlo.tech) (`2016-08`)
 
-名古屋最大級の学生ハッカソンOthloHack2016のランディングページです。 これの責任者をやっていました。
+<p><span class="image center-image">
+    <img src="/img/portfolio/othlohack.png" />
+</span></p>
 
-### ついまな - 楽しく英語を学ぶサービス - (`2016-04`)
+名古屋最大級の学生ハッカソンOthloHack2016のランディングページです。
 
-youtubeの動画を楽しむついでに字幕で英語を学ぶサービス。一人で全て開発中。言語はRailsでDBはREDIS、Memchache、MongoDB、Postgresを使用。近日公開予定
+### [ついまな - 楽しく英語を学ぶサービス](http://tsuimana.com) - (`2016-04`)
 
+<p><span class="image center-image">
+    <img src="/img/portfolio/tsuimana.png" />
+</span></p>
 
-### BeeApp (`2016-04`)
+youtubeの動画を楽しむついでに字幕で英語を学ぶサービス。一人で全て開発中。言語はRailsでDBはREDIS、Memchache、MongoDB、Postgresを使用。
 
-名古屋のサークル・イベント情報サイト。これもRailsで二人で開発。
+### [BeeApp](http://beeapp.be) (`2016-04`)
 
+名古屋のサークル・イベント情報サイト。これもRailsで開発。
 
-### 名大テニスサークスPOLLUX公式サイト (`2015-12`)
+### [名大テニスサークスPOLLUX公式サイト](http://tennis.pollux.nagoya/) (`2015-12`)
+
+<p><span class="image center-image">
+    <img src="/img/portfolio/pollux.png" />
+</span></p>
 
 所属しているテニスサークルの公式サイト
 
+### [FireCommits](https://fire-commits.herokuapp.com/) (`2015-11`)
 
-###FireCommits (`2015-11`)
+<p><span class="image center-image">
+    <img src="/img/portfolio/firecommits.png" />
+</span></p>
 
 githubの草を撃つゲーム
