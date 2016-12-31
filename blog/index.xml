@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog-rsses on ぽこひでブログ</title>
+    <link>http://www.pokohide.me/blog/index.xml</link>
+    <description>Recent content in Blog-rsses on ぽこひでブログ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 31 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.pokohide.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2016年振り返ってみた</title>
+      <link>http://www.pokohide.me/blog/2016/</link>
+      <pubDate>Sat, 31 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pokohide.me/blog/2016/</guid>
+      <description>
+
+&lt;h1 id=&#34;2016年振り返ってみた&#34;&gt;2016年振り返ってみた🤗&lt;/h1&gt;
+
+&lt;p&gt;こんにちは、ぽこひでです＼(^o^)／&lt;/p&gt;
+
+&lt;p&gt;ちょっと年明けちゃいましたが、昨年2016年は色々あった年なので、振り返ってみたいなと思います。&lt;/p&gt;
+
+&lt;h2 id=&#34;シェアハウス楽しい-1-3月&#34;&gt;シェアハウス楽しい (1~3月)&lt;/h2&gt;
+
+&lt;p&gt;毎月1週間くらい&lt;a href=&#34;http://shusaposss.com/&#34;&gt;就活シェアハウス&lt;/a&gt;に表参道に無料で泊まるという貴重な経験をしてました（笑）&lt;/p&gt;
+
+&lt;p&gt;サポーターズでイベントに参加したりGREEの短期インターンで初めてUnityを触ったり、意味もなく表参道をぶらぶらしたり
+ブルーボトルコーヒーやシェイクシャックとかアメリカから日本に上陸した店舗を巡ったりなんだかんだ色々楽しかったなー。&lt;/p&gt;
+
+&lt;p&gt;そんな東京滞在の時にオンラインのプログラミングチャレンジ&lt;a href=&#34;http://sprint.code-check.io/&#34;&gt;SPRINT&lt;/a&gt;の春に応募して、
+色々と賞を頂いたのがめちゃ嬉しかったです。初めて自分の力で取った賞だった気がする🙂&lt;/p&gt;
+
+&lt;p&gt;それと、シェアハウスで知り合った福岡の変な(褒め言葉)大学1年K氏と話した感じの会話&lt;/p&gt;
+
+&lt;p&gt;自分「ぽこひでですー。学生エンジニアやってます。」&lt;/p&gt;
+
+&lt;p&gt;K氏「福岡でシェアハウスとか持ってるからプログラミング講座やっちゃおうよ」&lt;/p&gt;
+
+&lt;p&gt;こんな感じでまさか実現すると思ってなかったけど、K氏の行動力で話し合った1ヶ月後くらいにプログラミング講座を福岡でやることになって
+1週間福岡のシェアハウスで泊まりながら、WEBの基礎を教えてました（笑）&lt;/p&gt;
+
+&lt;p&gt;天神が栄に似てるけど、栄以上に居心地よくて、蔦屋スタバもあるし、地下街が何かおしゃれだしご飯美味しいし美人多いし、何か最高でした。
+シェアハウスに泊まってよかったなーって思ったのは、シェアハウスで知り合った人に「せっかく来たからモツ鍋食べたいからいいトコ教えて」
+って聞いたら、俺が作ってやる！って話になって翌日に鍋パが決まったり、何か本当の福岡の温かみを知れたいい旅だったなー。&lt;/p&gt;
+
+&lt;p&gt;こんな感じでシェアハウスは色々楽しいので、学生は行ってみるといいよ(・∀・)ｂ&lt;/p&gt;
+
+&lt;p&gt;安いし、就活シェアハウスなら泊まってる人学生だし、色々情報交換できるし。&lt;/p&gt;
+
+&lt;h2 id=&#34;misoca期-4-7月&#34;&gt;Misoca期 (4~7月)&lt;/h2&gt;
+
+&lt;p&gt;4月からは名古屋のベンチャーのMisocaに開発インターンとして週4で働いていました🖥&lt;/p&gt;
+
+&lt;p&gt;時期的に久屋のMisocaビルのオフィスと名駅付近の新オフィスどっちでもインターンしてましたｂ&lt;/p&gt;
+
+&lt;p&gt;Misocaでは毎日、昼にメンバーでランチを食べに行っていて、色んな店のランチが思いのほか豪華であんまり食に興味なかった
+けど、毎日何を食べに行くかがちょっと楽しみになってました。&lt;/p&gt;
+
+&lt;p&gt;なので、ちょっと久屋と名駅周辺のランチ事情は分かった気がするっ！昼時だけ。&lt;/p&gt;
+
+&lt;p&gt;夜に行くと1万円台の焼肉屋だったり、高級そうな料亭っぽいところでもランチだと1000円以内で食べられるのでマジおすすめです！
+学生のうちにランチで外食することは少ないかもしれないけど、ランチだからこそ外食すべき！！！！&lt;/p&gt;
+
+&lt;p&gt;インターン中はRailsで開発をしていたのでRubyだったり、ReactでJSだったりを書いていて普通に勉強になったし、
+よくテストが失敗したり、Gitのコミットメッセージが汚いからこうした方がいいよとか、色々アドバイスをもらった毎日で
+エンジニアとしての基礎はMisocaで培われました &lt;code&gt;:)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;othlo期-5月&#34;&gt;Othlo期 (5月~)&lt;/h2&gt;
+
+&lt;p&gt;ちょうどMisocaでインターンをしている最中に、&lt;a href=&#34;http://www.othlo.tech&#34;&gt;OthloTech&lt;/a&gt;を立ち上げました。&lt;/p&gt;
+
+&lt;p&gt;イベントのために色んな企業と連絡をとったり、夏に開催した&lt;a href=&#34;http://hack.othlo.tech&#34;&gt;OthloHack2016&lt;/a&gt;で協賛企業集めでプレゼンしにいったり
+ほんとエンジニアっぽくないことをしてました（笑）&lt;/p&gt;
+
+&lt;p&gt;普通に18卒として就活しながら、OthloTechの人としてその企業と話してたりして自分の立ち位置がよくわからなくなる今日このごろです（笑）&lt;/p&gt;
+
+&lt;p&gt;今年は無料スペース作りたいし頑張るぞー。&lt;/p&gt;
+
+&lt;h2 id=&#34;インターン期-8-10月&#34;&gt;インターン期 (8 ~ 10月)&lt;/h2&gt;
+
+&lt;p&gt;2016年の夏はひたすらインターンに行きまくってました。8月から10月まで東京にずっと滞在していて、ずっと実家ぐらし
+だったので、恥ずかしながら初めて我が家を2ヶ月間離れました（笑）&lt;/p&gt;
+
+&lt;p&gt;8日間連続でハッカソンをしたり、何も考えずに土日にも短期のインターンをぶっ込んでいたので、たった2ヶ月の間に13連勤と17連勤が
+あったり、何かもう何したか忘れたくらいインターンしてました(´・ω・｀)&lt;/p&gt;
+
+&lt;p&gt;せっかくブログ作ったので、すごい今更感ありますが、またインターンで何をしたかをまとめます（笑）&lt;/p&gt;
+
+&lt;p&gt;2015年度に行きたいと思って応募して普通に落ちたStuDEVに行けただけでなく優勝できたり、尊敬する先輩が行っていたインターン先に行けたり、普段使ってる
+LINEのインターンに行けたり目標としていたことが色々達成出来た時期でもあったので辛いけど楽しかったですｗ&lt;/p&gt;
+
+&lt;p&gt;頑張りすぎたのか、初めての一人暮らしで栄養が偏ったのかわかりませんが、リクルートの長期インターンの最終日に熱を出して集合写真に映れなかったことだけが
+残念です :(&lt;/p&gt;
+
+&lt;h2 id=&#34;大学のレポートに追われている&#34;&gt;大学のレポートに追われている&lt;/h2&gt;
+
+&lt;p&gt;2016年の10月から学部3年として復学をして、1年ぶりに講義を受けてます(´・ω・｀)&lt;/p&gt;
+
+&lt;p&gt;休学を決めた時に予期はしていましたが、1学年下の代なので一緒に授業を受ける人いない&amp;hellip;🙄&lt;/p&gt;
+
+&lt;p&gt;インターンで実践的な技術だったりを身に着けたあとで、大学の講義を受けると色々と知識の隙間が埋まる感じで色々楽しいです。
+といっても、コンパイラを自作したり、tcp/ipでwebアプリケーションんを作ったり、やってきた事よりは低レイヤーな事ばかりですが
+色んな視点から見れて久々の授業がちょっぴり良い。&lt;/p&gt;
+
+&lt;p&gt;大学の時間が早いのと、一緒にご飯を食べる人がいないことだけが悲しかったことです🙃&lt;/p&gt;
+
+&lt;p&gt;あとテストやだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;2017年の目標&#34;&gt;2017年の目標&lt;/h2&gt;
+
+&lt;h3 id=&#34;othlotechとしてシェアスペースを作る&#34;&gt;OthloTechとしてシェアスペースを作る&lt;/h3&gt;
+
+&lt;p&gt;OthloTechを作った当初から考えていたことで、今年こそは名古屋に無料のシェアスペースを開設します。&lt;/p&gt;
+
+&lt;p&gt;もともとエンジニアになりたい人生ではなかったので、こういうエンジニアっぽくないことにも尽力していきたいな。&lt;/p&gt;
+
+&lt;h3 id=&#34;東海最強学生エンジニアになる&#34;&gt;東海最強学生エンジニアになる&lt;/h3&gt;
+
+&lt;p&gt;尊敬する東海最強エンジニアがいるのですが、来年からいなくなって枠が空くので頑張りますｂ&lt;/p&gt;
+
+&lt;p&gt;自分がこうしてその先輩を尊敬したように、技術だったり行動力で誰かに尊敬される人になりたいなー。
+尊敬に値する人じゃないんですけどね(´・ω・｀)&lt;/p&gt;
+
+&lt;h3 id=&#34;サービス作って一攫千金&#34;&gt;サービス作って一攫千金&lt;/h3&gt;
+
+&lt;p&gt;去年個人的に頑張って作った&lt;a href=&#34;http://tsuimana.com&#34;&gt;ついまな&lt;/a&gt;は、U-22プログラミングコンテストで経済産業省の賞をもらったり
+サービスとしてではなくて、賞でちょっとお金は稼ぎましたが、サービスとしては一切使われていないので、結構悔しいかったです（笑）&lt;/p&gt;
+
+&lt;p&gt;なので今年はまた、WEBでもアプリでもサービス作ろうかなー。それをグロースさせる経験もしてみたいな。&lt;/p&gt;
+
+&lt;h2 id=&#34;さいごに&#34;&gt;さいごに&lt;/h2&gt;
+
+&lt;p&gt;こんな感じで色々目標を決めていますが、去年の今頃はまさかOthloTechを作ろうだななんて考えていなかったし、ついまなだってRailsの
+勉強がてら作ったサービスでまさか受賞するだなんて考えていなかったし、何も考えずにとりあえずアクション第一で適当に生きてきました。&lt;/p&gt;
+
+&lt;p&gt;なので、今年も適当に楽しく生きてく年にしたいなーと思います！&lt;/p&gt;
+
+&lt;p&gt;2017年もこんな適当な人間ですが、よろしくお願いしますーーーーーーーーーーーーーー！！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PV見ながら洋楽歌えちゃうし、しかもシェアできるウェブサービス『ついまな』をリリースしました！</title>
+      <link>http://www.pokohide.me/blog/tsuimana/</link>
+      <pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pokohide.me/blog/tsuimana/</guid>
+      <description>
+
+&lt;p&gt;動画を楽しむついでに英語を学ぶウェブサービス『ついまな』をリリースしました！！&lt;/p&gt;
+
+&lt;p&gt;PV見ながら洋楽歌えちゃうし、しかもシェアできるはその一部でしかないんだけど、こっちの用途の方が受けそうだったからこんな名前に(´･ω･`)&lt;/p&gt;
+
+&lt;h1 id=&#34;ついまな-http-www-tsuimana-com&#34;&gt;&lt;a href=&#34;http://www.tsuimana.com/&#34;&gt;ついまな&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
+    &lt;img src=&#34;http://www.pokohide.me/img/2016/06/tsuimana.png&#34; /&gt;
+&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;「洋楽とかを聞く時、ただただ聞き流してませんか？」&lt;/strong&gt;
+普通に聞くだけでも楽しいから、ついでに英語字幕みて勉強した気になってみませんか！(実際、英語意識するだけで勉強になる&amp;hellip;はず)&lt;/p&gt;
+
+&lt;p&gt;　
+&lt;strong&gt;「洋楽を歌う時にわざわざYoutube開きながら、歌詞サイト開いて歌ってないですか？」&lt;/strong&gt;
+せっかく良いPVなんだから、PVみて歌いましょうよ。『ついまな』だとそれができます。&lt;/p&gt;
+
+&lt;p&gt;　&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;「ブログとかでおすすめの洋楽を紹介する時に普通にYoutubeの動画埋め込んでませんか？」&lt;/strong&gt;
+『ついまな』の埋め込みコードなら字幕付きで動画をサイトに埋め込めれます！&lt;/p&gt;
+
+&lt;h2 id=&#34;lean-on-major-lazer-dj-snake-feat-mø&#34;&gt;Lean On | Major Lazer &amp;amp; DJ Snake feat. MØ&lt;/h2&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;380&#34; src=&#34;http://www.tsuimana.com/embed/YqeW9_5kURI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;can-t-feel-my-face-the-weekend&#34;&gt;Can&amp;rsquo;t Feel My Face | The Weekend&lt;/h2&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;380&#34; src=&#34;http://www.tsuimana.com/embed/KEI4qSrkPAs&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;see-you-again&#34;&gt;See You Again&lt;/h2&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;380&#34; src=&#34;http://www.tsuimana.com/embed/RgKAFK5djSk&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;magic-rude-ルード&#34;&gt;Magic!/Rude(ルード)&lt;/h2&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;380&#34; src=&#34;http://www.tsuimana.com/embed/PIh2xe4jnpk&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;geronimo-ジェロニモ-sheppard&#34;&gt;Geronimo(ジェロニモ) | Sheppard&lt;/h2&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;380&#34; src=&#34;http://www.tsuimana.com/embed/ozsmSlvGHv4&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;こんな感じ(･∀･)b&lt;/p&gt;
+
+&lt;p&gt;普通に見ても楽しい英語のゲーム実況だったり、パロディだったりを英語を意識して、学んだ気になってみよう！英語がわからなくなっても大丈夫。翻訳機能があるのでボタン押すだけで日本語に変換されます！自動翻訳だけど(´･ω･`)&lt;/p&gt;
+
+&lt;p&gt;　&lt;/p&gt;
+
+&lt;p&gt;会員登録をすると動画を見ることで経験値とか視聴ログが取れ、レベルやグラフで可視化されるので、より「勉強している感じ」が実感できます👍&lt;/p&gt;
+
+&lt;p&gt;海外の動画って面白いのが多いんです。それが英語だからって見るの遠慮してませんか。ここなら字幕があります。
+試しに「実写版ポケモン」を見てみてください。(･∀･)笑&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.tsuimana.com/evideos/22&#34;&gt;http://www.tsuimana.com/evideos/22&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最後に、あなたのおすすめの動画を投稿したり、字幕が不十分な動画にあなたが字幕を補足してあげたりと、みんなで楽しむついでに英語を学べる動画のプラットフォームを作っていけます！みんなで盛り上げましょう!!! (必死)&lt;/p&gt;
+
+&lt;p&gt;(&amp;hellip;字幕追加してくれた人は貢献度が付与されて、ランキング形式で観れる機能があったり&amp;hellip;)
+(すいません,技術的な問題でiOSには対応していません。)&lt;/p&gt;
+
+&lt;p&gt;ぜひ動画を楽しんでください^ ^&lt;/p&gt;
+
+&lt;p&gt;個人的に頑張ったから開発とかの技術的なことはQiitaかこのブログで発信していきたいな&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>人工無能で会話してみた n-gram編(1)</title>
+      <link>http://www.pokohide.me/blog/n-gram/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.pokohide.me/blog/n-gram/</guid>
+      <description>&lt;p&gt;はじめまして。大学の前期授業も始まって今年から人工知能の講義があったので、試しに図書館にあったこの「はじめてのAIプログラミング」を読んでみました！&lt;/p&gt;
+
+&lt;p&gt;実装はC言語なんですが、年明けからRubyを勉強し始めてからC言語の冗長性になんか嫌気がさしてしまったので、自分なりに拙いプログラムながらRubyで実装してみました。&lt;/p&gt;
+
+&lt;p&gt;読んでみると「はじめて」とうたってるだけあって、最初の方はかなりわかりやすくて読んでいて楽しかったです。その内容を少しずつ紹介できたらなと思います。&lt;/p&gt;
+
+&lt;p&gt;基本的にこの本の７割近くは人工無能の話で、人間と対話するにあたってどのような技術が使われてきたかをCのソース付きで解説してくれています。その中でも、最初に紹介されていたn-gram法とマルコフ連鎖を今日は自分のメモがてらここに。&lt;/p&gt;
+
+&lt;p&gt;簡単な人工無能で会話するために、まず学習させる文章を用意します。夏目漱石とか古い感じの書籍だと著作権が切れてて無料でインターネットに載ってたりするので今回はそれを活用する。&lt;/p&gt;
+
+&lt;p&gt;まず、その文章をn-gram法といって、n文字ずつのまとまりに区切ってその表れ方を解析する方法で、文章の特徴を知ります。例えば2-gram法で&lt;/p&gt;
+
+&lt;p&gt;　　　　&lt;code&gt;「明日は晴れだ。」-&amp;gt; [明日],[日は],[は晴],[晴れ],[れだ],[だ。]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;と区切れます。この方法で区切ったこの2文字列を何か配列に格納して、2文字列が文章内に何回出現したかを記録していきます。これをつたないプログラムで書くと&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@list = {}
+def ngram(n, text)
+　i = 0
+　while(text[i+n-1]) do
+　　@list[text[i,n]]? (@list[text[i,n] += 1) : (@list[text[i,n]] = 1)
+　　i += 1
+　end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;となります。何らかの文章(text)と何文字ごとに分解するか(n)を引数で渡して、例えば3文字なら、3文字先の文字が存在しなくなるまで、while文で繰り返して、もし既にその3文字列が存在すれば+1を、まだ存在しなかったら1回出現したので1を格納する。といった動作をします。&lt;/p&gt;
+
+&lt;p&gt;実際に実行してみると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ngram(2,&amp;quot;私は日本人です。私は中国人です。あなたは何人ですか？&amp;quot;)
+#=&amp;gt; {&amp;quot;私は&amp;quot;=&amp;gt;2, &amp;quot;は日&amp;quot;=&amp;gt;1, &amp;quot;日本&amp;quot;=&amp;gt;1, &amp;quot;本人&amp;quot;=&amp;gt;1, &amp;quot;人で&amp;quot;=&amp;gt;3, &amp;quot;です&amp;quot;=&amp;gt;3, &amp;quot;す。&amp;quot;=&amp;gt;2, &amp;quot;。私&amp;quot;=&amp;gt;1, &amp;quot;は中&amp;quot;=&amp;gt;1, &amp;quot;中国&amp;quot;=&amp;gt;1, &amp;quot;国人&amp;quot;=&amp;gt;1, &amp;quot;。あ&amp;quot;=&amp;gt;1, &amp;quot;あな&amp;quot;=&amp;gt;1, &amp;quot;なた&amp;quot;=&amp;gt;1, &amp;quot;たは&amp;quot;=&amp;gt;1, &amp;quot;は何&amp;quot;=&amp;gt;1, &amp;quot;何人&amp;quot;=&amp;gt;1, &amp;quot;すか&amp;quot;=&amp;gt;1, &amp;quot;か？&amp;quot;=&amp;gt;1}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と@listに格納されるので、とりあずこれでn-gram法は完成ということで。
+次回はこのn-gram法で作ったn文字列をマルコフ連鎖で繋げてそれっぽい？会話をできる人工無能を頑張って作りますっb&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
