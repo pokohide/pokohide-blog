@@ -1,0 +1,19 @@
+{
+  "name": "pokohide",
+  "version": "1.0.0",
+  "description": "pokohide",
+  "main": "index.js",
+  "scripts": {
+    "start": "hugo server -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyde2able/Pokohide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyde2able/Pokohide/issues"
+  },
+  "homepage": "https://github.com/hyde2able/Pokohide#readme"
+}
