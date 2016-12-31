@@ -1,0 +1,25 @@
+<!-- Meta -->
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="robots" content="index,follow,noodp" />
+<meta name="googlebot" content="index,follow,snippet,archive" />
+<meta name="subject" content="{{ .Title }}" />
+<meta name="abstract" content="{{ .Title }}" />
+<meta name="description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Description }}{{ end }}" />
+<meta name="keywords" content="{{ .Site.Params.keywords }}" />
+<meta name="url" content="{{ .Permalink }}">
+<meta name="author" content="{{ .Site.Params.author }}" />
+
+<!-- Twitter -->
+<meta name="twitter:image" content="{{ if .Params.banner }}{{ .Site.BaseURL }}{{ .Params.banner }}{{ else }}{{ .Site.Params.thumbnail }}{{ end }}" />
+
+<!-- Facebook -->
+<meta property="fb:app_id" content="1825299907716402" />
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content="{{ .Title }}" />
+<meta property="og:title" content="{{ if .Params.title }}{{ .Name }} / {{ .Params.title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta property="og:image" content="{{ if .Params.banner }}{{ .Site.BaseURL }}{{ .Params.banner }}{{ else }}{{ .Site.Params.thumbnail }}{{ end }}" />
+<meta property="og:description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Description }}{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />

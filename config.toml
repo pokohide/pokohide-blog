@@ -2,8 +2,9 @@ baseurl = "http://www.pokohide.me"
 languageCode = "ja"
 title = "ぽこひでブログ"
 preserveTaxonomyNames = true
-paginate = 3
+paginate = 4
 googleAnalytics = "UA-86584013-1"
+hasCJKLanguage = true
 
 [params]
     # Sets the meta tag description, usually reserved for the main page
