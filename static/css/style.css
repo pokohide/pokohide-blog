@@ -1,0 +1,44 @@
+html {
+    font-size : 100%;
+    line-height: 1.5;
+}
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic);
+body{
+  font-family: Quicksand, 游ゴシック体, 'Yu Gothic', YuGothic,
+    'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Open Sans", "Hiragino Kaku Gothic ProN", Meiryo, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  text-transform: none;
+}
+/* 垂直方向のマージンを統一 */
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+
+h2 {
+  font-size: 1.625em;
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+h3 {
+  font-size: 1.375em;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+}
+p {
+  margin: 0 0 1.6em;
+}
+a {
+    text-align: justify;
+    word-wrap: break-word;
+    letter-spacing: 0.07em;
+}
